@@ -1,0 +1,56 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="CSS/EstilosLogin.css" />
+    <title></title>
+</head>
+<body>
+    <h2>Proyecto 2: Login Y Registro Peliculas</h2>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form id="registroForm" runat="server">
+                <h1>Crear Cuenta</h1>
+                <input type="text" name="usuarioR" placeholder="Usuario" required="required" />
+                <input type="text" name="nombreR" placeholder="Nombre" required="required" />
+                <input type="text" name="apellidosR" placeholder="Apellidos" required="required" />
+                <input type="email" name="emailR" placeholder="Email" required="required" />
+                <input type="password" name="passwordR" placeholder="Password" required="required" />
+                <input type="submit" name="btnRegistro" value="Registrarse" />
+                <span id="errorMensaje" runat="server" style="color: red;"></span>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <form id="loginForm">
+                <h1>Loguearse</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <span>Usar tu cuenta</span>
+                <input type="text" name="usuario" id="usuario" placeholder="Usuario" required="required" />
+                <input type="password" name="password" id="password" placeholder="Password" required="required" />
+                <input type="submit" name="btnLogin" value="Loguearse" />
+                <span id="errorMensaje" runat="server" style="color: red;"></span>
+            </form>
+        </div>
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Bienvenido!</h1>
+                    <p>Para mantenerse conectado con nosotros, inicie sesión con la información</p>
+                    <div id="registroMensaje" class="mensaje"></div>
+                    <button class="ghost" id="signIn">Loguearse</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h1>Hola Bienvenido!</h1>
+                    <p>Introduce tus datos personales y comienza a ver nuestras peliculas.</p>
+                    <div id="loginMensaje" class="mensaje"></div>
+                    <button class="ghost" id="signUp">Registrarte</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="Scripts/JS.js"></script>
+</body>
+</html>
