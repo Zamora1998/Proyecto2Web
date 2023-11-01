@@ -67,6 +67,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Busqueda.html" />
     <Content Include="CSS\EstilosLogin.css" />
     <Content Include="IngresoPeliculas.html" />
     <Content Include="Principal.html" />
