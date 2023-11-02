@@ -69,9 +69,11 @@
   <ItemGroup>
     <Content Include="Busqueda.html" />
     <Content Include="CSS\EstilosLogin.css" />
+    <Content Include="CSS\style.css" />
     <Content Include="IngresoPeliculas.html" />
     <Content Include="Principal.html" />
     <Content Include="Scripts\JS.js" />
+    <Content Include="Scripts\ObtPeliculas.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +88,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

@@ -1,0 +1,19 @@
+﻿body {
+    background-color: #121212; 
+    color: #fff; 
+    font-family: Arial, sans-serif; 
+}
+
+
+nav {
+    background-color: #00008b; 
+}
+
+    nav a {
+        color: #fff; 
+    }
+
+.sign-up-container a,
+.sign-in-container a {
+    color: #000; 
+}
