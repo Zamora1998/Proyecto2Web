@@ -1,19 +1,43 @@
 ﻿body {
-    background-color: #121212; 
-    color: #fff; 
-    font-family: Arial, sans-serif; 
+    background-color: black;
+    color: #000;
+    font-family: Georgia, sans-serif;
 }
 
 
-nav {
-    background-color: #00008b; 
+.white-bg {
+    background-color: white;
 }
 
-    nav a {
-        color: #fff; 
+#peliculas-container {
+    color: black;
+}
+#peliculas-container img {
+        max-width: 100%;
     }
 
-.sign-up-container a,
-.sign-in-container a {
-    color: #000; 
+    #peliculas-container p {
+        text-align: center;
+        color: black; /* Cambia el color del texto a negro */
+    }
+
+#peliculas-container {
+    display: flex;
+    justify-content: space-between; 
+}
+
+
+#peliculas-container-segunda-fila {
+    display: flex;
+    justify-content: space-between; 
+}
+
+.img-zoom {
+    transition: transform 0.2s; 
+}
+.img-zoom:hover {
+        transform: scale(1.1); 
+    }
+#peliculas-container-segunda-fila p {
+    text-align: center;
 }

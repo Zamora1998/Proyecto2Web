@@ -27,10 +27,9 @@ function mostrarPeliculas(peliculas) {
     var containerSegundaFila = document.getElementById("peliculas-container-segunda-fila");
 
     // Tamaño fijo para las imágenes de la primera fila
-    var imgWidthPrimeraFila = 800; // Ajusta el ancho según tus necesidades
+    var imgWidthPrimeraFila = 400; // Ajusta el ancho según tus necesidades
     var imgHeightPrimeraFila = 500; // Ajusta la altura según tus necesidades
 
-    // Recorre las películas y crea elementos para mostrarlas
     peliculas.forEach(function (pelicula, index) {
         var div = document.createElement("div");
         div.classList.add("col-md-4");
@@ -38,6 +37,7 @@ function mostrarPeliculas(peliculas) {
         var img = document.createElement("img");
         img.src = pelicula.rutaPoster;
         img.classList.add("img-thumbnail");
+        img.classList.add("img-zoom"); // Agrega la clase para el efecto de zoom
 
         var nombre = document.createElement("p");
         nombre.textContent = pelicula.nombre;

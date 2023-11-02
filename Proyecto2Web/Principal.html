@@ -9,34 +9,6 @@
     <link rel="stylesheet" type="text/css" href="CSS/style.css">
     <script src="Scripts/ObtPeliculas.js"></script>
 
-    <style>
-        .white-bg {
-            background-color: white;
-        }
-
-        #peliculas-container {
-            color: black;
-        }
-
-            #peliculas-container img {
-                max-width: 100%;
-            }
-
-            #peliculas-container p {
-                text-align: center;
-            }
-        /* Para el contenedor de la primera fila */
-        #peliculas-container {
-            display: flex;
-            justify-content: space-between; /* Espacio entre los elementos */
-        }
-
-        /* Para el contenedor de la segunda fila */
-        #peliculas-container-segunda-fila {
-            display: flex;
-            justify-content: space-between; /* Espacio entre los elementos */
-        }
-    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -52,9 +24,10 @@
             </ul>
             <form method="get" action="" class="form-inline ml-auto">
                 <div class="input-group">
-                    <input type="text" placeholder="Buscar..." name="s" id="s" value="" autocomplete="off" class="form-control">
+                    <input type="text" placeholder="" name="s" id="s" value="" autocomplete="off" class="form-control">
                     <div class="input-group-append">
                         <button class="btn btn-outline-success" type="submit">
+                            Buscar <!-- Cambio el texto directamente aquí -->
                             <span class="fas fa-search"></span>
                         </button>
                     </div>
@@ -68,24 +41,9 @@
         </div>
     </nav>
     <div class="container mt-3 white-bg">
-        <div class="row" id="peliculas-container">
-            <div class="col-md-4">
-                <!-- Película 1 -->
-            </div>
-            <div class="col-md-4">
-                <!-- Película 2 -->
-            </div>
-            <div class="col-md-4">
-                <!-- Película 3 -->
-            </div>
+        <div class="row" id="peliculas-container">     
         </div>
         <div class="row" id="peliculas-container-segunda-fila">
-            <div class="col-md-6">
-                <!-- Película 4 -->
-            </div>
-            <div class="col-md-6">
-                <!-- Película 5 -->
-            </div>
         </div>
     </div>
 
