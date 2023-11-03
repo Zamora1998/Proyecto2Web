@@ -2,7 +2,6 @@
 
 // Función para cargar y mostrar las películas
 function cargarPeliculas() {
-    // URL del API
     var apiUrl = "https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV3/api/PeliculasF/GetPeliculas";
 
     // Realiza una solicitud GET al API

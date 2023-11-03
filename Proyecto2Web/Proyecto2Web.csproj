@@ -73,6 +73,7 @@
     <Content Include="DetallePelicula.html" />
     <Content Include="IngresoPeliculas.html" />
     <Content Include="Principal.html" />
+    <Content Include="Scripts\Busqueda.js" />
     <Content Include="Scripts\JS.js" />
     <Content Include="Scripts\ObtPeliculas.js" />
     <Content Include="Web.config" />
