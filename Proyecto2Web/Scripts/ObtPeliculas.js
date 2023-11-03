@@ -39,8 +39,15 @@ function mostrarPeliculas(peliculas) {
         img.classList.add("img-thumbnail");
         img.classList.add("img-zoom"); // Agrega la clase para el efecto de zoom
 
-        var nombre = document.createElement("p");
-        nombre.textContent = pelicula.nombre;
+        var enlace = document.createElement("a");
+        enlace.href = "#"; // Esto es temporal, debes reemplazarlo con la URL del API
+        enlace.textContent = pelicula.nombre;
+
+        enlace.addEventListener("click", function (event) {
+            event.preventDefault(); // Evita el comportamiento predeterminado del enlace
+            enviarNombreAPi(pelicula.nombre); // Llama a una función para enviar el nombre al API
+        });
+
 
         var resena = document.createElement("p");
         resena.textContent = "Reseña: " + pelicula.resena;
@@ -50,7 +57,7 @@ function mostrarPeliculas(peliculas) {
         fechaEstreno.textContent = "Fecha Estreno: " + new Date(pelicula.fechaLanzamiento).toLocaleDateString();
 
         div.appendChild(img);
-        div.appendChild(nombre);
+        div.appendChild(enlace);
         div.appendChild(resena);
         div.appendChild(fechaEstreno);
 
@@ -64,9 +71,12 @@ function mostrarPeliculas(peliculas) {
             containerSegundaFila.appendChild(div);
         }
     });
+    function enviarNombreAPi(nombrePelicula) {
+        // Aquí debes implementar el código para enviar el nombre al API
+        // Puedes usar fetch u otras técnicas para hacer la solicitud al API
+        console.log("Enviando nombre de película al API: " + nombrePelicula);
+    }
 }
-
-
 
 
 // Cuando la página se carga, llama a la función para cargar las películas
