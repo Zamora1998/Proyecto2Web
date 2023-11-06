@@ -29,7 +29,7 @@ async function validarLogin(usuario, contrasena) {
             NombreUsuario: usuario,
             Contrasena: contrasena
         };
-        const response = await fetch("http://localhost:59842/api/UsuariosF/ValidarLogin", {
+        const response = await fetch("https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV3/api/UsuariosF/ValidarLogin", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -76,7 +76,7 @@ async function consumirInactivarUSU(usuario) {
             noReturn: devolver
         };
         // Hacer la solicitud a la otra API
-        const response = await fetch("http://localhost:59842/api/UsuariosF/ActualizarEstadoUsuario", {
+        const response = await fetch("https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV3/api/UsuariosF/ActualizarEstadoUsuario", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -156,7 +156,7 @@ registroForm.addEventListener('submit', async function (event) {
         };
 
         // Realizar la solicitud a la API de Registro
-        const response = await fetch("http://localhost:59842/api/UsuariosF/RegistrarUsuario", {
+        const response = await fetch("https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV3/api/UsuariosF/RegistrarUsuario", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

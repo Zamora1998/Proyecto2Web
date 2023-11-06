@@ -71,10 +71,13 @@ function mostrarPeliculas(peliculas) {
         }
     });
     function enviarNombreAPi(nombrePelicula) {
-        // Aquí debes implementar el código para enviar el nombre al API
-        // Puedes usar fetch u otras técnicas para hacer la solicitud al API
-        console.log("Enviando nombre de película al API: " + nombrePelicula);
+        // Construye la URL para la página de detalles de película
+        var detalleUrl = "detallePelicula.html?nombrePelicula=" + encodeURIComponent(nombrePelicula);
+
+        // Redirige a la página de detalles de película
+        window.location.href = detalleUrl;
     }
+
 }
 
 
