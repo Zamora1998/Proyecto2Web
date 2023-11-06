@@ -2,7 +2,7 @@
 
 // Función para cargar y mostrar las películas
 function cargarPeliculas() {
-    var apiUrl = "https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV3/api/PeliculasF/GetPeliculas";
+    var apiUrl = "https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV4/api/PeliculasF/GetPeliculas";
 
     // Realiza una solicitud GET al API
     fetch(apiUrl)
@@ -70,13 +70,13 @@ function mostrarPeliculas(peliculas) {
             containerSegundaFila.appendChild(div);
         }
     });
-    function enviarNombreAPi(nombrePelicula) {
-        // Construye la URL para la página de detalles de película
-        var detalleUrl = "detallePelicula.html?nombrePelicula=" + encodeURIComponent(nombrePelicula);
+function enviarNombreAPi(nombrePelicula) {
+    // Construye la URL para la página de detalles de película
+    var detalleUrl = "detallePelicula.html?nombrePelicula=" + encodeURIComponent(nombrePelicula);
 
-        // Redirige a la página de detalles de película
-        window.location.href = detalleUrl;
-    }
+    // Redirige a la página de detalles de película
+    window.location.href = detalleUrl;
+}
 
 }
 

@@ -3,6 +3,7 @@
     color: white;
     font-family: Arial, sans-serif;
 }
+
 .white-bg {
     background-color: #3B3B3B;
 }
@@ -34,6 +35,11 @@
         transform: scale(1.1); 
     }
 #peliculas-container-segunda-fila p {
+    text-align: center;
+}
+
+/* Estilos personalizados para el título */
+h1.text-center {
     text-align: center;
 }
 

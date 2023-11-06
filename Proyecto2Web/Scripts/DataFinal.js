@@ -4,7 +4,7 @@
     var nombrePelicula = urlParams.get("nombrePelicula");
 
     // Realiza una solicitud al API de detalles de película
-    var apiUrl = "https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV3/api/PeliculaDetalle/ObtenerDetallesPorNombre?nombrePelicula=" + encodeURIComponent(nombrePelicula);
+    var apiUrl = "https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV4/api/PeliculaDetalle/ObtenerDetallesPorNombre?nombrePelicula=" + encodeURIComponent(nombrePelicula);
 
     fetch(apiUrl)
         .then(function (response) {
