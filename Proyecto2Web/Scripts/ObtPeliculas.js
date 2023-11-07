@@ -1,8 +1,6 @@
-﻿// script.js
-
-// Función para cargar y mostrar las películas
+﻿
 function cargarPeliculas() {
-    var apiUrl = "https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV4/api/PeliculasF/GetPeliculas";
+    var apiUrl = "https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV4/api/PeliculasF/ObtenerDetalles";
 
     // Realiza una solicitud GET al API
     fetch(apiUrl)
@@ -52,12 +50,19 @@ function mostrarPeliculas(peliculas) {
         resena.textContent = "Reseña: " + pelicula.resena;
         resena.style.textAlign = "justify"; // Alinea el texto en justificado
 
+        // Crea un párrafo para los actores
+        var actoresParr = document.createElement("p");
+        actoresParr.textContent = "Actores: " + pelicula.actoresStaff.map(actor => actor.nombreActor).join(", ");
+        actoresParr.style.textAlign = "justify"; // Alinea el texto en justificado
+
+
         var fechaEstreno = document.createElement("p");
         fechaEstreno.textContent = "Fecha Estreno: " + new Date(pelicula.fechaLanzamiento).toLocaleDateString();
 
         div.appendChild(img);
         div.appendChild(enlace);
         div.appendChild(resena);
+        div.appendChild(actoresParr);
         div.appendChild(fechaEstreno);
 
         if (index < 3) {
