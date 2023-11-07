@@ -1,250 +1,255 @@
-﻿@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
-
-* {
-    box-sizing: border-box;
-}
-
+﻿/*****************globals*************/
 body {
-    background: #f6f5f7;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
-    height: 100vh;
-    margin: -20px 0 50px;
+    font-family: 'open sans';
+    overflow-x: hidden;
+    background-color: #00b3a7 !important;
+    color: #555;
 }
 
-h1 {
-    font-weight: bold;
-    margin: 0;
+img {
+    max-width: 100%;
 }
 
-h2 {
-    text-align: center;
-}
-
-p {
-    font-size: 14px;
-    font-weight: 100;
-    line-height: 20px;
-    letter-spacing: 0.5px;
-    margin: 20px 0 30px;
-}
-
-span {
-    font-size: 12px;
-}
-
-a {
-    color: #333;
-    font-size: 14px;
-    text-decoration: none;
-    margin: 15px 0;
-}
-
-button {
-    border-radius: 20px;
-    border: 1px solid #FF4B2B;
-    background-color: #FF4B2B;
-    color: #FFFFFF;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px 45px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: transform 80ms ease-in;
-}
-
-    button:active {
-        transform: scale(0.95);
-    }
-
-    button:focus {
-        outline: none;
-    }
-
-    button.ghost {
-        background-color: transparent;
-        border-color: #FFFFFF;
-    }
-
-form {
-    background-color: #FFFFFF;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 50px;
-    height: 100%;
-    text-align: center;
-}
-
-input {
+.login {
+    max-width: 400px;
+    width: auto;
+    margin: 50px auto;
     background-color: #eee;
-    border: none;
-    padding: 12px 15px;
-    margin: 8px 0;
+    font-size: 1.3rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+}
+
+.login-1--header {
+    background-color: #ffc414;
+}
+
+.login-1 .arrow-down {
+    border-top: 20px solid #ffc414;
+}
+
+.login-1 .input-group-addon {
+    background-color: #ffc414;
+}
+
+.login-1 .btn-default {
+    background-color: #ffc414;
+}
+
+.login-1 .login--footer__text:first-of-type {
+    border-top: 1px dotted #444;
+}
+
+.login-2--header {
+    background-color: #6d008f;
+}
+
+.login-2 .arrow-down {
+    border-top: 20px solid #6d008f;
+}
+
+.login-2 .btn-default {
+    background-color: #6d008f;
+}
+
+.login-2 .input-group-addon {
+    background-color: #6d008f;
+}
+
+.login-3--header {
+    background-color: #b33000;
+}
+
+.login-3 .arrow-down {
+    border-top: 20px solid #b33000;
+}
+
+.login-3 .btn-default {
+    background-color: #b33000;
+}
+
+.login-3 .input-group-addon {
+    background-color: #b33000;
+}
+
+.login--header {
+    padding: .7em 0;
+    color: #fff;
+    position: relative;
+}
+
+    .login--header h3 {
+        text-transform: UPPERCASE;
+    }
+
+.login--form {
+    padding: 40px 20px;
+}
+
+.login--form__input-area {
     width: 100%;
 }
 
-.container {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
-    position: relative;
-    overflow: hidden;
-    width: 768px;
-    max-width: 100%;
-    min-height: 480px;
+.login--footer {
+    padding: 0 20px 20px 20px;
 }
 
-.form-container {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
+.login--footer__text:first-of-type {
+    padding-top: 10px;
 }
 
-.sign-in-container {
-    left: 0;
-    width: 50%;
-    z-index: 2;
-}
-
-.container.right-panel-active .sign-in-container {
-    transform: translateX(100%);
-}
-
-.sign-up-container {
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-}
-
-.container.right-panel-active .sign-up-container {
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-    animation: show 0.6s;
-}
-
-@keyframes show {
-    0%, 49.99% {
-        opacity: 0;
-        z-index: 1;
-    }
-
-    50%, 100% {
-        opacity: 1;
-        z-index: 5;
-    }
-}
-
-.overlay-container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.6s ease-in-out;
-    z-index: 100;
-}
-
-.container.right-panel-active .overlay-container {
-    transform: translateX(-100%);
-}
-
-.overlay {
-    background: #FF416C;
-    background: -webkit-linear-gradient(to right, #FF4B2B, #FF416C);
-    background: linear-gradient(to right, #FF4B2B, #FF416C);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 0;
-    color: #FFFFFF;
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-}
-
-.container.right-panel-active .overlay {
-    transform: translateX(50%);
-}
-
-.overlay-panel {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-}
-
-.overlay-left {
-    transform: translateX(-20%);
-}
-
-.container.right-panel-active .overlay-left {
-    transform: translateX(0);
-}
-
-.overlay-right {
-    right: 0;
-    transform: translateX(0);
-}
-
-.container.right-panel-active .overlay-right {
-    transform: translateX(20%);
-}
-
-.social-container {
-    margin: 20px 0;
-}
-
-    .social-container a {
-        border: 1px solid #DDDDDD;
-        border-radius: 50%;
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        margin: 0 5px;
-        height: 40px;
-        width: 40px;
-    }
-
-footer {
-    background-color: #222;
+.login .btn {
+    border: none;
+    border-radius: 0;
+    display: block;
+    width: 100%;
+    text-transform: UPPERCASE;
     color: #fff;
-    font-size: 14px;
-    bottom: 0;
-    position: fixed;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 999;
 }
 
-    footer p {
-        margin: 10px 0;
-    }
+/***********utility************/
+.arrow-down {
+    z-index: 999;
+    border: 20px solid transparent;
+    position: absolute;
+    margin: 0 auto;
+    top: 100%;
+    display: block;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
 
-    footer i {
-        color: red;
-    }
+input.form-control {
+    height: auto;
+    padding: .7em;
+    background-color: #ccc;
+}
 
-    footer a {
-        color: #3c97bf;
+input.form-control, span.input-group-addon {
+    border-radius: 0;
+    border: none;
+}
+
+span.input-group-addon {
+    color: #fff;
+    font-size: 1.2em;
+    width: 14%;
+}
+
+.icon {
+    display: inline-block;
+}
+
+span.icon-small {
+    font-size: 1.8em;
+    line-height: 1.9em;
+    width: 2em;
+    text-align: center;
+}
+
+span.icon-medium {
+    font-size: 2.5em;
+    line-height: 1.9em;
+    width: 2em;
+    text-align: center;
+}
+
+.login--header span.icon {
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.login--form__input-area,
+.login--footer__text,
+.login--footer__social-buttons {
+    margin-bottom: 20px;
+}
+
+button.btn-default {
+    padding: 1em;
+    transition: all .3s ease;
+}
+
+.icon {
+    color: #fff;
+}
+
+.icon-fb {
+    background-color: #0069e0;
+}
+
+.icon-tw {
+    background-color: #8accff;
+}
+
+.icon-gp {
+    background-color: #c22a00;
+}
+
+a {
+    color: inherit;
+}
+
+    a:hover, a:focus {
+        color: inherit;
         text-decoration: none;
+        border-bottom: 1px dotted #444;
     }
+
+.checkbox-label {
+    position: relative;
+    padding-left: 30px;
+    vertical-align: middle;
+}
+
+input[type="checkbox"] {
+    visibility: hidden;
+}
+
+.checkgraph {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: #ccc;
+    left: 0;
+}
+
+    .checkgraph:before {
+        max-width: 0px;
+        display: block;
+        overflow: hidden;
+        line-height: 30px;
+        text-align: center;
+        font-size: 1.7em;
+    }
+
+input:checked ~ .checkgraph:before {
+    max-width: 30px;
+    -webkit-animation-name: check;
+    animation-name: check;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+}
+
+@-webkit-keyframes check {
+    0% {
+        max-width: 0;
+    }
+
+    100% {
+        max-width: 30px;
+    }
+}
+
+@keyframes check {
+    0% {
+        max-width: 0;
+    }
+
+    100% {
+        max-width: 30px;
+    }
+}
+
+/*# sourceMappingURL=style.css.map */

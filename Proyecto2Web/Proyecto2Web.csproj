@@ -74,6 +74,7 @@
     <Content Include="DetallePelicula.html" />
     <Content Include="IngresoPeliculas.html" />
     <Content Include="Principal.html" />
+    <Content Include="Registrarse.html" />
     <Content Include="Scripts\Busqueda.js" />
     <Content Include="Scripts\DataFinal.js" />
     <Content Include="Scripts\JS.js" />
