@@ -2,6 +2,7 @@
 const signInButton = document.getElementById('signIn');
 const container = document.getElementById('container');
 const errorMensaje = document.getElementById('errorMensaje');
+const errorMensaje2 = document.getElementById('errorMensaje2');
 let intentosFallidos = 0;
 
 signUpButton.addEventListener('click', () => {
@@ -13,10 +14,12 @@ signInButton.addEventListener('click', () => {
 });
 
 function mostrarError(elemento, mensaje, recargarPagina) {
+    console.log("Mostrando error:", mensaje); // Verifica si la función se está llamando
     elemento.textContent = mensaje;
     setTimeout(function () {
         elemento.textContent = "";
         if (recargarPagina) {
+            console.log("Recargando página..."); // Verifica si se llega a esta parte del código
             location.reload();
         }
     }, 5000);
@@ -27,26 +30,28 @@ async function validarLogin(usuario, contrasena) {
     try {
         const requestBody = {
             NombreUsuario: usuario,
-            Contrasena: contrasena
+            Contrasena: contrasena,
+            TiempoToken: 300
         };
-        const response = await fetch("https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV4/api/UsuariosF/ValidarLogin", {
+        const response = await fetch("https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV5/api/UsuariosF/ValidarLogin", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(requestBody) // No necesitas envolver requestBody dentro de otro objeto
+            body: JSON.stringify(requestBody)
         });
+        //const data = await response.json();
+        //console.log(data);
 
         // En lugar de verificar response.ok, verifica el código de estado directamente
         if (response.status === 200) {
             const data = await response.json();
             if (data === 2) {
                 // El usuario está inactivo, mostrar mensaje
-                mostrarError(errorMensaje, "Su usuario se encuentra inactivo, por favor comuníquese con el administrador", false);
+                mostrarError(errorMensaje2, "Su usuario se encuentra inactivo, por favor comuníquese con el administrador", false);
             } else {
-                // El usuario está activo, guardar el token en las cookies y redirigir
-                document.cookie = "token=" + data.Token + "; path=/";
-                window.location.href = "PaginaPrincipal.aspx";
+                document.cookie = "token=" + data.tokenExpiracion + "; path=/";
+                window.location.href = "Principal.html";
             }
         } else if (response.status === 404) {
             intentosFallidos++;
@@ -56,13 +61,13 @@ async function validarLogin(usuario, contrasena) {
                 consumirInactivarUSU(usuario);
             }
             else {
-                mostrarError(errorMensaje, "Usuario y/o contraseña incorrectos", false);
+                mostrarError(errorMensaje2, "Usuario y/o contraseña incorrectos", false);
             }
         } else if (response.status === 400) {
-            mostrarError(errorMensaje, "Error al generar el token", true);
+            mostrarError(errorMensaje2, "Error al generar el token", true);
         }
     } catch (error) {
-        mostrarError(errorMensaje, "Error desconocido", true);
+        mostrarError(errorMensaje2, error, true);
     }
 }
 
@@ -76,7 +81,7 @@ async function consumirInactivarUSU(usuario) {
             noReturn: devolver
         };
         // Hacer la solicitud a la otra API
-        const response = await fetch("https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV4/api/UsuariosF/ActualizarEstadoUsuario", {
+        const response = await fetch("https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV5/api/UsuariosF/ActualizarEstadoUsuario", {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -85,9 +90,9 @@ async function consumirInactivarUSU(usuario) {
         });
         //// Verificar la respuesta de la otra API y manejarla según sea necesario
         //if (response.status === 200) {
-        //    mostrarError(errorMensaje, "Su usuario se encuentra inactivo, por favor comuníquese con el administrador", false);
+        //    mostrarError(errorMensaje2, "Su usuario se encuentra inactivo, por favor comuníquese con el administrador", false);
         //} else {
-        //    mostrarError(errorMensaje, "Error inesperado", false);
+        //    mostrarError(errorMensaje2, "Error inesperado", false);
         //}
     } catch (error) {
         mostrarError(errorMensaje, error, true);
@@ -113,7 +118,6 @@ loginForm.addEventListener('submit', function (event) {
     // Llamar a la función validarLogin con el usuario y la contraseña
     validarLogin(usuario, contrasena);
 });
-
 
 //METODOS PARA REGISTRAR UN NUEVO USUARIO
 // Obtener referencia al formulario y campos de entrada del formulario de registro
@@ -156,14 +160,15 @@ registroForm.addEventListener('submit', async function (event) {
         };
 
         // Realizar la solicitud a la API de Registro
-        const response = await fetch("https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV4/api/UsuariosF/RegistrarUsuario", {
+        const response = await fetch("https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV5/api/UsuariosF/RegistrarUsuario", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(requestBody)
         });
-
+        //const data = await response.json();
+        //console.log(data);
         if (response.status === 201) {
             // Registro exitoso, mostrar mensaje y limpiar campos del formulario
             mostrarError(errorMensaje, "“Usuario creado con éxito", true);
@@ -181,6 +186,6 @@ registroForm.addEventListener('submit', async function (event) {
         }
     } catch (error) {
         // Error en la solicitud, mostrar mensaje de error genérico
-        mostrarError(errorMensaje, "Ha ocurrido un error intente de nuevo", false);
+        mostrarError(errorMensaje, error, false);
     }
 });

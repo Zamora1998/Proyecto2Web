@@ -10,7 +10,7 @@
 
 function consultarAPI(nombrePelicula) {
     $.ajax({
-        url: "https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV4/api/PeliculasF/GetPeliculasNombre?nombrePelicula=" + nombrePelicula,
+        url: "https://tiusr30pl.cuc-carrera-ti.ac.cr/APIV5/api/PeliculasF/GetPeliculasNombre?nombrePelicula=" + nombrePelicula,
         type: "GET",
         success: function (data) {
             if (data && data.length > 0) {
